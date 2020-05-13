@@ -86,7 +86,8 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
 	{ MODKEY,             		    XK_minus,   spawn,          SHCMD("amixer -q sset Master 5%-") },
 	{ MODKEY,             		    XK_equal,   spawn,          SHCMD("amixer -q sset Master 5%+") },
-	{ MODKEY|ControlMask,           XK_l,       spawn,          SHCMD("slock") },
+	{ MODKEY|ControlMask,           XK_m,       spawn,          SHCMD("amixer -q sset Master 0%") },
+	{ MODKEY,                       XK_w,       spawn,          SHCMD("brave") },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
@@ -97,6 +98,9 @@ static Key keys[] = {
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
+	{ MODKEY|ControlMask,           XK_l,      spawn,          SHCMD("slock") },
+	{ MODKEY|ControlMask,           XK_r,      spawn,          SHCMD("reboot") },
+	{ MODKEY|ControlMask,           XK_s,      spawn,           SHCMD("shutdown now") },
 };
 
 /* button definitions */
