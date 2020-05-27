@@ -1,7 +1,8 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static const unsigned int borderpx  = 1;        /* border pixel of windows */
+static const unsigned int borderpx  = 2;        /* border pixel of windows */
+static const unsigned int gappx     = 5;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
@@ -28,6 +29,7 @@ static const Rule rules[] = {
 	 */
 	/* class      instance    title       tags mask     isfloating   monitor */
 	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
+	{ "Upwork",   NULL,       NULL,       0,            1,           -1 },
 	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
 };
 
@@ -84,8 +86,10 @@ static Key keys[] = {
 	{ MODKEY,                       XK_period, focusmon,       {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
-	{ MODKEY,             		    XK_minus,   spawn,          SHCMD("amixer -q sset Master 5%-") },
-	{ MODKEY,             		    XK_equal,   spawn,          SHCMD("amixer -q sset Master 5%+") },
+	{ MODKEY,                       XK_equal,  setgaps,        {.i = +1 } },
+	{ MODKEY,                       XK_minus,  setgaps,        {.i = 0  } },
+	{ MODKEY|ControlMask,           XK_minus,   spawn,          SHCMD("amixer -q sset Master 5%-") },
+	{ MODKEY|ControlMask,           XK_equal,   spawn,          SHCMD("amixer -q sset Master 5%+") },
 	{ MODKEY|ControlMask,           XK_m,       spawn,          SHCMD("amixer -q sset Master 0%") },
 	{ MODKEY,                       XK_w,       spawn,          SHCMD("brave") },
 	TAGKEYS(                        XK_1,                      0)
