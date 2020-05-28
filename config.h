@@ -86,10 +86,10 @@ static Key keys[] = {
 	{ MODKEY,                       XK_period, focusmon,       {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
-	{ MODKEY,                       XK_equal,  setgaps,        {.i = +1 } },
-	{ MODKEY,                       XK_minus,  setgaps,        {.i = 0  } },
-	{ MODKEY|ControlMask,           XK_minus,   spawn,          SHCMD("amixer -q sset Master 5%-") },
-	{ MODKEY|ControlMask,           XK_equal,   spawn,          SHCMD("amixer -q sset Master 5%+") },
+	{ MODKEY|ControlMask,           XK_equal,  setgaps,        {.i = +1 } },
+	{ MODKEY|ControlMask,           XK_minus,  setgaps,        {.i = 0  } },
+	{ MODKEY,                       XK_minus,   spawn,          SHCMD("amixer -q sset Master 5%-") },
+	{ MODKEY,                       XK_equal,   spawn,          SHCMD("amixer -q sset Master 5%+") },
 	{ MODKEY|ControlMask,           XK_m,       spawn,          SHCMD("amixer -q sset Master 0%") },
 	{ MODKEY,                       XK_w,       spawn,          SHCMD("brave") },
 	TAGKEYS(                        XK_1,                      0)
@@ -101,6 +101,7 @@ static Key keys[] = {
 	TAGKEYS(                        XK_7,                      6)
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
+	{ MODKEY,                       XK_e,      spawn,           SHCMD("st -e lf") },
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
 	{ MODKEY|ControlMask,           XK_l,      spawn,          SHCMD("slock") },
 	{ MODKEY|ControlMask,           XK_r,      spawn,          SHCMD("reboot") },
