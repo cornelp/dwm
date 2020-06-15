@@ -6,8 +6,8 @@ static const unsigned int gappx     = 5;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "monospace:size=10" };
-static const char dmenufont[]       = "monospace:size=10";
+static const char *fonts[]          = { "JetBrainsMonoMedium:size=10" };
+static const char dmenufont[]       = "JetBrainsMonoMedium:size=10";
 static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#bbbbbb";
@@ -30,7 +30,8 @@ static const Rule rules[] = {
 	/* class      instance    title       tags mask     isfloating   monitor */
 	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
 	{ "Upwork",   NULL,       NULL,       0,            1,           -1 },
-	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
+	{ "Pidgin",   NULL,       NULL,       0,            1,           -1 },
+	{ NULL,       "st",       "bc",       0,            1,           -1 },
 };
 
 /* layout(s) */
@@ -88,9 +89,9 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
 	{ MODKEY|ControlMask,           XK_equal,  setgaps,        {.i = +1 } },
 	{ MODKEY|ControlMask,           XK_minus,  setgaps,        {.i = 0  } },
-	{ MODKEY,                       XK_minus,   spawn,          SHCMD("amixer -q sset Master 5%-") },
-	{ MODKEY,                       XK_equal,   spawn,          SHCMD("amixer -q sset Master 5%+") },
-	{ MODKEY|ControlMask,           XK_m,       spawn,          SHCMD("amixer -q sset Master 0%") },
+	{ MODKEY,                       XK_minus,   spawn,          SHCMD("pamixer -d 5") },
+	{ MODKEY,                       XK_equal,   spawn,          SHCMD("pamixer -i 5") },
+	{ MODKEY|ControlMask,           XK_m,       spawn,          SHCMD("pamixer -t") },
 	{ MODKEY,                       XK_w,       spawn,          SHCMD("brave") },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
@@ -102,6 +103,7 @@ static Key keys[] = {
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
 	{ MODKEY,                       XK_e,      spawn,           SHCMD("st -e lf") },
+	{ MODKEY|ControlMask,           XK_t,      spawn,           SHCMD("st -e bc -l") },
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
 	{ MODKEY|ControlMask,           XK_l,      spawn,          SHCMD("slock") },
 	{ MODKEY|ControlMask,           XK_r,      spawn,          SHCMD("reboot") },
