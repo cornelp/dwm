@@ -93,6 +93,10 @@ static Key keys[] = {
 	{ MODKEY,                       XK_equal,   spawn,          SHCMD("pamixer -i 5") },
 	{ MODKEY|ControlMask,           XK_m,       spawn,          SHCMD("pamixer -t") },
 	{ MODKEY,                       XK_w,       spawn,          SHCMD("brave") },
+	{ MODKEY,                       XK_n,       viewtoright,     {0} },
+	{ MODKEY|ShiftMask,             XK_n,       viewtoleft,      {0} },
+	/* { MODKEY|ControlMask,           XK_n,       tagtoright,     {0} },
+	{ MODKEY|ShiftMask|ControlMask, XK_n,       tagtoleft,      {0} }, */
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
@@ -108,6 +112,10 @@ static Key keys[] = {
 	{ MODKEY|ControlMask,           XK_l,      spawn,          SHCMD("slock") },
 	{ MODKEY|ControlMask,           XK_r,      spawn,          SHCMD("reboot") },
 	{ MODKEY|ControlMask,           XK_s,      spawn,           SHCMD("shutdown now") },
+	{ MODKEY,                       XK_m,       viewtoleft,     {0} },
+	{ MODKEY|ShiftMask,             XK_m,       viewtoright,    {0} },
+	{ MODKEY|ControlMask,           XK_m,   tagtoleft,      {0} },
+	{ MODKEY|ShiftMask|ControlMask, XK_m,  tagtoright,     {0} },
 };
 
 /* button definitions */
