@@ -70,7 +70,7 @@ static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
-	{ MODKEY,                       XK_b,      togglebar,      {0} },
+	{ MODKEY|ShiftMask,             XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_i,      incnmaster,     {.i = +1 } },
@@ -98,7 +98,7 @@ static Key keys[] = {
 	{ MODKEY|ControlMask,           XK_m,       spawn,          SHCMD("pamixer -t") },
 	{ MODKEY,                       XK_w,       spawn,          SHCMD("brave") },
 	{ MODKEY,                       XK_n,       viewtoright,     {0} },
-	{ MODKEY|ShiftMask,             XK_n,       viewtoleft,      {0} },
+	{ MODKEY,                       XK_b,       viewtoleft,      {0} },
 	/* { MODKEY|ControlMask,           XK_n,       tagtoright,     {0} },
 	{ MODKEY|ShiftMask|ControlMask, XK_n,       tagtoleft,      {0} }, */
 	TAGKEYS(                        XK_1,                      0)
@@ -115,7 +115,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
 	{ MODKEY|ControlMask,           XK_l,      spawn,          SHCMD("slock") },
 	{ MODKEY|ControlMask,           XK_r,      spawn,          SHCMD("reboot") },
-	{ MODKEY|ControlMask,           XK_s,      spawn,           SHCMD("shutdown now") },
+	{ MODKEY|ControlMask,           XK_s,      spawn,           SHCMD("st -e ~/.scripts/shutdown") },
 	{ MODKEY,                       XK_m,       viewtoleft,     {0} },
 	{ MODKEY|ShiftMask,             XK_m,       viewtoright,    {0} },
 	{ MODKEY|ControlMask,           XK_m,   tagtoleft,      {0} },
