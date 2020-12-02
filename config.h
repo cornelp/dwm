@@ -10,8 +10,8 @@ static const int systraypinningfailfirst = 1;   /* 1: if pinning fails, display 
 static const int showsystray        = 1;     /* 0 means no systray */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "JetBrainsMonoMedium:size=10" };
-static const char dmenufont[]       = "JetBrainsMonoMedium:size=10";
+static const char *fonts[]          = { "monospace:size=10:weight=medium:antialias=true:autohint=true", "JetBrainsMonoMediumNerdFont:size=12:weight=medium:antialias=true:autohint:true" };
+static const char dmenufont[]       = "monospace:size=10";
 static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#bbbbbb";
@@ -94,9 +94,9 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
 	{ MODKEY|ControlMask,           XK_equal,  setgaps,        {.i = +1 } },
 	{ MODKEY|ControlMask,           XK_minus,  setgaps,        {.i = 0  } },
-	{ MODKEY,                       XK_minus,   spawn,          SHCMD("pamixer -d 5") },
-	{ MODKEY,                       XK_equal,   spawn,          SHCMD("pamixer -i 5") },
-	{ MODKEY|ControlMask,           XK_m,       spawn,          SHCMD("pamixer -t") },
+	{ MODKEY,                       XK_minus,   spawn,          SHCMD("amixer set Master 5-") },
+	{ MODKEY,                       XK_equal,   spawn,          SHCMD("amixer set Master 5+") },
+	{ MODKEY|ControlMask,           XK_m,       spawn,          SHCMD("amixer set Master toggle") },
 	{ MODKEY,                       XK_w,       spawn,          SHCMD("brave") },
 	{ MODKEY,                       XK_n,       viewtoright,     {0} },
 	{ MODKEY,                       XK_b,       viewtoleft,      {0} },
