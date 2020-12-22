@@ -115,7 +115,7 @@ static Key keys[] = {
 	{ MODKEY|ControlMask,           XK_t,      spawn,           SHCMD("st -e bc -l") },
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
 	{ MODKEY|ControlMask,           XK_l,      spawn,          SHCMD("slock") },
-	{ MODKEY|ControlMask,           XK_r,      spawn,          SHCMD("~/.scripts/reboot") },
+	{ MODKEY|ControlMask,           XK_r,      spawn,          SHCMD("~/.scripts/restart") },
 	{ MODKEY|ControlMask,           XK_s,      spawn,           SHCMD("~/.scripts/shutdown") },
 	{ MODKEY|ShiftMask,             XK_m,       viewtoright,    {0} },
 	{ MODKEY|ControlMask,           XK_m,   tagtoleft,      {0} },
