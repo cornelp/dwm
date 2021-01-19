@@ -130,7 +130,7 @@ static Key keys[] = {
 	TAGKEYS(                        XK_7,                      6)
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
-	{ MODKEY,                       XK_e,      spawn,           SHCMD("st -e vifm ~") },
+	{ MODKEY|ControlMask,           XK_e,      spawn,           SHCMD("VBoxManage startvm Win10") },
 	{ MODKEY|ControlMask,           XK_t,      spawn,           SHCMD("st -e bc -l") },
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
 	{ MODKEY|ControlMask,           XK_l,      spawn,          SHCMD("slock") },
