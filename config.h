@@ -29,11 +29,13 @@ typedef struct {
 	const void *cmd;
 } Sp;
 const char *spcmd1[] = {"st", "-n", "spterm", "-g", "120x34", NULL };
-const char *spcmd2[] = {"st", "-n", "spfm", "-g", "144x41", "-e", "vifm", NULL };
+const char *spcmd2[] = {"st", "-n", "spfm", "-g", "150x50", "-e", "vifm", NULL };
+const char *spcmd3[] = {"st", "-n", "scalc", "-g", "100x30", "-e", "bc", NULL };
 static Sp scratchpads[] = {
 	/* name          cmd  */
 	{"spterm",      spcmd1},
 	{"spfm",    spcmd2},
+	{"scalc",    spcmd3},
 };
 
 /* tagging */
@@ -49,8 +51,8 @@ static const Rule rules[] = {
 	{ "Upwork",   NULL,       NULL,       0,            1,           -1 },
 	{ "Pidgin",   NULL,       NULL,       0,            1,           -1 },
 	{ NULL,		  "spfm",		NULL,		SPTAG(1),		1,			 -1 },
+	{ NULL,		  "scalc",		NULL,		SPTAG(2),		1,			 -1 },
 	{ NULL,		  "spterm",		NULL,		SPTAG(0),		1,			 -1 },
-	{ NULL,       "st",       "bc",       0,            1,           -1 },
 };
 
 /* layout(s) */
@@ -109,6 +111,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_period, focusmon,       {.i = +1 } },
 	{ MODKEY,            			XK_y,  	   togglescratch,  {.ui = 0 } },
 	{ MODKEY,            			XK_u,	   togglescratch,  {.ui = 1 } },
+	{ MODKEY|ControlMask,           XK_t,	   togglescratch,  {.ui = 2 } },
 	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
 	{ MODKEY|ControlMask,           XK_equal,  setgaps,        {.i = +1 } },
@@ -119,8 +122,6 @@ static Key keys[] = {
 	{ MODKEY,                       XK_w,       spawn,          SHCMD("brave") },
 	{ MODKEY,                       XK_n,       viewtoright,     {0} },
 	{ MODKEY,                       XK_b,       viewtoleft,      {0} },
-	/* { MODKEY|ControlMask,           XK_n,       tagtoright,     {0} },
-	{ MODKEY|ShiftMask|ControlMask, XK_n,       tagtoleft,      {0} }, */
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
@@ -131,7 +132,6 @@ static Key keys[] = {
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
 	{ MODKEY|ControlMask,           XK_e,      spawn,           SHCMD("VBoxManage startvm Win10") },
-	{ MODKEY|ControlMask,           XK_t,      spawn,           SHCMD("st -e bc -l") },
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
 	{ MODKEY|ControlMask,           XK_l,      spawn,          SHCMD("slock") },
 	{ MODKEY|ControlMask,           XK_r,      spawn,          SHCMD("~/.scripts/restart") },
