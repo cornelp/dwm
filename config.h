@@ -49,7 +49,7 @@ static const Rule rules[] = {
 	/* class      instance    title       tags mask     isfloating   monitor */
 	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
 	{ "Upwork",   NULL,       NULL,       0,            1,           -1 },
-	{ "Pidgin",   NULL,       NULL,       0,            1,           -1 },
+	{ "Psi",      NULL,       NULL,       0,            1,           -1 },
 	{ NULL,		  "spfm",		NULL,		SPTAG(1),		1,			 -1 },
 	{ NULL,		  "scalc",		NULL,		SPTAG(2),		1,			 -1 },
 	{ NULL,		  "spterm",		NULL,		SPTAG(0),		1,			 -1 },
@@ -136,6 +136,7 @@ static Key keys[] = {
 	{ MODKEY|ControlMask,           XK_l,      spawn,          SHCMD("slock") },
 	{ MODKEY|ControlMask,           XK_r,      spawn,          SHCMD("~/.scripts/restart") },
 	{ MODKEY|ControlMask,           XK_s,      spawn,           SHCMD("~/.scripts/shutdown") },
+	{ MODKEY,                       XK_d,      spawn,           SHCMD("~/.scripts/dmenumount") },
 	{ MODKEY|ShiftMask,             XK_m,       viewtoright,    {0} },
 	{ MODKEY|ControlMask,           XK_m,   tagtoleft,      {0} },
 	{ MODKEY|ShiftMask|ControlMask, XK_m,  tagtoright,     {0} },
